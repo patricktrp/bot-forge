@@ -4,7 +4,3 @@ spring:
 
   application:
     name: bot-forge
-
-  ai:
-    openai:
-      api-key: jaskdjaskdj312adkasjdkl

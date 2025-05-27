@@ -1,11 +1,42 @@
 services:
-  pgvector:
+  postgres:
     image: 'pgvector/pgvector:pg16'
+    container_name: postgres
     environment:
-      - 'POSTGRES_DB=bot-forge'
-      - 'POSTGRES_PASSWORD=postgres'
-      - 'POSTGRES_USER=postgres'
+      POSTGRES_DB: bot-forge
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
     labels:
-      - "org.springframework.boot.service-connection=postgres"
+      - 'org.springframework.boot.service-connection=postgres'
     ports:
       - '5432:5432'
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  keycloak:
+    image: 'keycloak/keycloak:26.2'
+    container_name: keycloak
+    restart: unless-stopped
+    ports:
+      - '8088:8080'
+    depends_on:
+      - postgres
+    command:
+      - start-dev
+      - --bootstrap-admin-username
+      - admin
+      - --bootstrap-admin-password
+      - admin
+      - --import-realm
+    environment:
+      KC_DB: postgres
+      KC_DB_URL_HOST: postgres
+      KC_DB_URL_PORT: 5432
+      KC_DB_USERNAME: postgres
+      KC_DB_PASSWORD: postgres
+      KC_DB_URL_DATABASE: postgres
+    volumes:
+      - ./dev-environment/keycloak/realms/:/opt/keycloak/data/import/
+
+volumes:
+  pg_data:

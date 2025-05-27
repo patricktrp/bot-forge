@@ -1,0 +1,10 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8088/realms/bot-forge
+          jwk-set-uri: http://localhost:8088/realms/bot-forge/protocol/openid-connect/certs
+  ai:
+    openai:
+      api-key: jaskdjaskdj312adkasjdkl
