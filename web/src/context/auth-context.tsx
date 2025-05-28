@@ -25,7 +25,10 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
 
   useEffect(() => {
     keycloak
-      .init({ onLoad: "login-required" })
+      .init({
+        onLoad: "login-required",
+        redirectUri: `${window.location.origin}/dashboard`,
+      })
       .then(async (authenticated) => {
         if (authenticated) {
           setToken(keycloak.token || "");
