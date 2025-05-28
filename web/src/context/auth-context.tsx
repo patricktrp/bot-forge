@@ -23,8 +23,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
   const [token, setToken] = useState<string>("");
   const [userInfo, setUserInfo] = useState<KeycloakProfile | null>(null);
 
-  console.log(userInfo);
-
   useEffect(() => {
     keycloak
       .init({ onLoad: "login-required" })
