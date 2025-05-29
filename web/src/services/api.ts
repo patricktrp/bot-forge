@@ -1,11 +1,10 @@
 import axios from "axios";
 import keycloak from "@/services/keycloak";
-import {
-  type NoteCreationDto,
-  type NoteDto,
-  type NoteUpdateDto,
-} from "@/types/notes.types";
-
+// import {
+//   type NoteDto,
+//   type NoteUpdateDto,
+//   type NoteCreationDto,
+// } from "@/types/notes.types";
 const api = axios.create({
   baseURL: "http://localhost:8080",
 });

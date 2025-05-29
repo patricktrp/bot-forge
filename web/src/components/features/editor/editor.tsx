@@ -1,24 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { useEditor, EditorContent } from "@tiptap/react";
+import { useEditor, EditorContent, type JSONContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 
 const extensions = [StarterKit];
-const content = {
-  type: "doc",
-  content: [
-    {
-      type: "paragraph",
-      content: [
-        {
-          type: "text",
-          text: "Hello World!",
-        },
-      ],
-    },
-  ],
-};
 
-const Editor = () => {
+const Editor = ({ content }: { content: JSONContent }) => {
   const editor = useEditor({
     extensions,
     content,
