@@ -1,4 +1,4 @@
-package dev.treppmann.cere_os.notes;
+package dev.treppmann.cere_os.notes.events;
 
 import java.util.UUID;
 

@@ -1,3 +1,4 @@
+import Editor from "@/components/features/editor/editor";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/dashboard")({
@@ -5,5 +6,9 @@ export const Route = createFileRoute("/dashboard")({
 });
 
 function Index() {
-  return <div className="m-6"></div>;
+  return (
+    <div className="m-6">
+      <Editor />
+    </div>
+  );
 }

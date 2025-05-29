@@ -1,5 +1,7 @@
 package dev.treppmann.cere_os.notes;
 
+import dev.treppmann.cere_os.notes.events.NoteDeletionEvent;
+import dev.treppmann.cere_os.notes.events.NoteUpdateEvent;
 import dev.treppmann.cere_os.security.CurrentUser;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;

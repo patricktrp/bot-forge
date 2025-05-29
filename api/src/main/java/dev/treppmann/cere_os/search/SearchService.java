@@ -1,6 +1,6 @@
 package dev.treppmann.cere_os.search;
 
-import dev.treppmann.cere_os.notes.NoteUpdateEvent;
+import dev.treppmann.cere_os.notes.events.NoteUpdateEvent;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
