@@ -12,12 +12,19 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as DashboardImport } from './routes/dashboard'
+import { Route as NotesNoteIdImport } from './routes/notes/$noteId'
 
 // Create/Update Routes
 
 const DashboardRoute = DashboardImport.update({
   id: '/dashboard',
   path: '/dashboard',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const NotesNoteIdRoute = NotesNoteIdImport.update({
+  id: '/notes/$noteId',
+  path: '/notes/$noteId',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -32,6 +39,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardImport
       parentRoute: typeof rootRoute
     }
+    '/notes/$noteId': {
+      id: '/notes/$noteId'
+      path: '/notes/$noteId'
+      fullPath: '/notes/$noteId'
+      preLoaderRoute: typeof NotesNoteIdImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -39,32 +53,37 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/dashboard': typeof DashboardRoute
+  '/notes/$noteId': typeof NotesNoteIdRoute
 }
 
 export interface FileRoutesByTo {
   '/dashboard': typeof DashboardRoute
+  '/notes/$noteId': typeof NotesNoteIdRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/dashboard': typeof DashboardRoute
+  '/notes/$noteId': typeof NotesNoteIdRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/dashboard'
+  fullPaths: '/dashboard' | '/notes/$noteId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/dashboard'
-  id: '__root__' | '/dashboard'
+  to: '/dashboard' | '/notes/$noteId'
+  id: '__root__' | '/dashboard' | '/notes/$noteId'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   DashboardRoute: typeof DashboardRoute
+  NotesNoteIdRoute: typeof NotesNoteIdRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   DashboardRoute: DashboardRoute,
+  NotesNoteIdRoute: NotesNoteIdRoute,
 }
 
 export const routeTree = rootRoute
@@ -77,11 +96,15 @@ export const routeTree = rootRoute
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
-        "/dashboard"
+        "/dashboard",
+        "/notes/$noteId"
       ]
     },
     "/dashboard": {
       "filePath": "dashboard.tsx"
+    },
+    "/notes/$noteId": {
+      "filePath": "notes/$noteId.tsx"
     }
   }
 }
