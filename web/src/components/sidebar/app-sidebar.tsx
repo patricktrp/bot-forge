@@ -1,5 +1,5 @@
 import * as React from "react";
-import { BotMessageSquare, SquareTerminal } from "lucide-react";
+import { BotMessageSquare, BrainCircuit, SquareTerminal } from "lucide-react";
 import { NavMain } from "@/components/sidebar/nav-main";
 import { NavUser } from "@/components/sidebar/nav-user";
 import {
@@ -32,11 +32,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <SidebarMenuButton size="lg" asChild>
               <div>
                 <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                  <BotMessageSquare className="size-4" />
+                  <BrainCircuit className="size-4" />
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-semibold">BotForge</span>
-                  {/* <span className="truncate text-xs">Enterprise</span> */}
+                  <span className="truncate font-semibold">CereOS</span>
+                  {/* <span className="truncate text-xs">Pro</span> */}
                 </div>
               </div>
             </SidebarMenuButton>
