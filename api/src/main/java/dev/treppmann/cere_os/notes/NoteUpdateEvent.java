@@ -1,4 +1,6 @@
 package dev.treppmann.cere_os.notes;
 
-public record NoteUpdateEvent(Long noteId, String content) {
+import java.util.UUID;
+
+public record NoteUpdateEvent(Long noteId, UUID userId, String content) {
 }
