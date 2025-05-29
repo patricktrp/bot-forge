@@ -12,9 +12,10 @@ export const Route = createFileRoute("/notes/$noteId")({
 
 function RouteComponent() {
   const note = Route.useLoaderData();
-  console.log(note);
+
   return (
     <div>
+      <h1>{note.title}</h1>
       <Editor content={note.content} />
     </div>
   );
