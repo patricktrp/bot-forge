@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'dev.treppmann.bot-forge' is invalid and this project uses 'dev.treppmann.bot_forge' instead.
+* The original package name 'dev.treppmann.bot-forge' is invalid and this project uses 'dev.treppmann.cere_os' instead.
 
 # Getting Started
 

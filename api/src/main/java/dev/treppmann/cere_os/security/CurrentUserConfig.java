@@ -1,4 +1,4 @@
-package dev.treppmann.bot_forge.security;
+package dev.treppmann.cere_os.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

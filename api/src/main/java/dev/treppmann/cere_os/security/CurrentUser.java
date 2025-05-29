@@ -1,4 +1,4 @@
-package dev.treppmann.bot_forge.security;
+package dev.treppmann.cere_os.security;
 
 public class CurrentUser {
 

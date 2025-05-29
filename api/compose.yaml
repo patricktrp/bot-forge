@@ -3,7 +3,7 @@ services:
     image: 'pgvector/pgvector:pg16'
     container_name: postgres
     environment:
-      POSTGRES_DB: bot-forge
+      POSTGRES_DB: cere-os
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
     labels:

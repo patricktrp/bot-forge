@@ -1,12 +1,12 @@
-package dev.treppmann.bot_forge;
+package dev.treppmann.cere_os;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BotForgeApplication {
+public class ApiApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(BotForgeApplication.class, args);
+		SpringApplication.run(ApiApplication.class, args);
 	}
 
 }

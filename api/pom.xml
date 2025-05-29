@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>dev.treppmann</groupId>
-	<artifactId>bot-forge</artifactId>
+	<artifactId>cere-os</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>bot-forge</name>
+	<name>cere-os</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

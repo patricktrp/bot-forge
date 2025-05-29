@@ -1,4 +1,4 @@
-package dev.treppmann.bot_forge;
+package dev.treppmann.cere_os;
 
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;

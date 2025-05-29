@@ -1,6 +1,6 @@
 {
   "id": "9a2ab1d6-109a-435f-b7d3-77634730ded0",
-  "realm": "bot-forge",
+  "realm": "cere-os",
   "notBefore": 0,
   "defaultSignatureAlgorithm": "RS256",
   "revokeRefreshToken": false,
@@ -58,7 +58,7 @@
       },
       {
         "id": "76c6f439-d8a4-4268-8d6a-34fad2f487e5",
-        "name": "default-roles-bot-forge",
+        "name": "default-roles-cere-os",
         "description": "${role_default-roles}",
         "composite": true,
         "composites": {
@@ -409,7 +409,7 @@
   "groups": [],
   "defaultRole": {
     "id": "76c6f439-d8a4-4268-8d6a-34fad2f487e5",
-    "name": "default-roles-bot-forge",
+    "name": "default-roles-cere-os",
     "description": "${role_default-roles}",
     "composite": true,
     "clientRole": false,
@@ -484,13 +484,13 @@
       "clientId": "account",
       "name": "${client_account}",
       "rootUrl": "${authBaseUrl}",
-      "baseUrl": "/realms/bot-forge/account/",
+      "baseUrl": "/realms/cere-os/account/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/realms/bot-forge/account/*"
+        "/realms/cere-os/account/*"
       ],
       "webOrigins": [],
       "notBefore": 0,
@@ -531,13 +531,13 @@
       "clientId": "account-console",
       "name": "${client_account-console}",
       "rootUrl": "${authBaseUrl}",
-      "baseUrl": "/realms/bot-forge/account/",
+      "baseUrl": "/realms/cere-os/account/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/realms/bot-forge/account/*"
+        "/realms/cere-os/account/*"
       ],
       "webOrigins": [],
       "notBefore": 0,
@@ -771,13 +771,13 @@
       "clientId": "security-admin-console",
       "name": "${client_security-admin-console}",
       "rootUrl": "${authAdminUrl}",
-      "baseUrl": "/admin/bot-forge/console/",
+      "baseUrl": "/admin/cere-os/console/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/admin/bot-forge/console/*"
+        "/admin/cere-os/console/*"
       ],
       "webOrigins": [
         "+"
