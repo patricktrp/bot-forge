@@ -25,7 +25,7 @@ export function NavMain({
 }) {
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>Platform</SidebarGroupLabel>
+      <SidebarGroupLabel>Projects</SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => (
           <SidebarMenuItem key={item.title}>
@@ -43,6 +43,9 @@ export function NavMain({
           </SidebarMenuItem>
         ))}
       </SidebarMenu>
+      <SidebarGroupLabel>Areas</SidebarGroupLabel>
+      <SidebarGroupLabel>Resources</SidebarGroupLabel>
+      <SidebarGroupLabel>Archive</SidebarGroupLabel>
     </SidebarGroup>
   );
 }

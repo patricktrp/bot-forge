@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { getBots } from "@/services/api";
+import { getNotes } from "@/services/api";
 
 export const Route = createFileRoute("/dashboard")({
   component: Index,
@@ -9,7 +9,7 @@ export const Route = createFileRoute("/dashboard")({
 function Index() {
   return (
     <div className="p-2">
-      <Button onClick={getBots}>SEND</Button>
+      <Button onClick={getNotes}>SEND</Button>
     </div>
   );
 }

@@ -13,9 +13,9 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-const getBots = async () => {
-  const res = await api.get("/bots");
+const getNotes = async () => {
+  const res = await api.get("/notes");
   console.log(res.data);
 };
 
-export { getBots };
+export { getNotes };

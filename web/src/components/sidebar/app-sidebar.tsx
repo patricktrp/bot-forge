@@ -1,5 +1,5 @@
 import * as React from "react";
-import { BotMessageSquare, BrainCircuit, SquareTerminal } from "lucide-react";
+import { BrainCircuit, SquareTerminal } from "lucide-react";
 import { NavMain } from "@/components/sidebar/nav-main";
 import { NavUser } from "@/components/sidebar/nav-user";
 import {
@@ -15,11 +15,11 @@ import {
 
 const data = {
   navMain: [
-    {
-      title: "Dashboard",
-      url: "/dashboard",
-      icon: SquareTerminal,
-    },
+    // {
+    //   title: "Test",
+    //   url: "/dashboard",
+    //   icon: SquareTerminal,
+    // },
   ],
 };
 

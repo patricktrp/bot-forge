@@ -18,6 +18,7 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 
 import java.util.Collection;
 import java.util.List;
+import java.util.UUID;
 
 @Configuration
 @EnableWebSecurity
@@ -52,7 +53,8 @@ public class SecurityConfig {
     public Converter<Jwt, AbstractAuthenticationToken> jwtAuthenticationConverter() {
         return jwt -> {
             String userId = jwt.getSubject();
-            CurrentUser user = new CurrentUser(userId);
+            UUID userUUID = UUID.fromString(userId);
+            CurrentUser user = new CurrentUser(userUUID);
 
             Collection<GrantedAuthority> auths = List.of();
 

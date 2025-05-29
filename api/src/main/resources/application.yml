@@ -1,6 +1,16 @@
 spring:
   profiles:
     active: dev
-
   application:
     name: cere-os
+  ai:
+    ollama:
+      embedding:
+        model: nomic-embed-text:v1.5
+      chat:
+        model: llama3.1:8b
+    vectorstore:
+      pgvector:
+        initialize-schema: true
+        index-type: HNSW
+        distance-type: COSINE_DISTANCE
