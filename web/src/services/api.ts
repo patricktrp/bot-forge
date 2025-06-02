@@ -1,10 +1,10 @@
 import axios from "axios";
 import keycloak from "@/services/keycloak";
-// import {
-//   type NoteDto,
-//   type NoteUpdateDto,
-//   type NoteCreationDto,
-// } from "@/types/notes.types";
+import type {
+  NoteDto,
+  NoteUpdateDto,
+  NoteCreationDto,
+} from "@/types/notes.types";
 const api = axios.create({
   baseURL: "http://localhost:8080",
 });
@@ -38,6 +38,7 @@ const updateNote = async (
   noteId: number,
   noteUpdateDto: NoteUpdateDto
 ): Promise<NoteDto> => {
+  console.log(noteUpdateDto);
   const { data } = await api.patch(`/notes/${noteId}`, noteUpdateDto);
   return data;
 };

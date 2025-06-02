@@ -1,28 +1,24 @@
-import { Button } from "@/components/ui/button";
 import { useEditor, EditorContent, type JSONContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 
 const extensions = [StarterKit];
 
-const Editor = ({ content }: { content: JSONContent }) => {
+const EditorComponent = ({
+  content,
+  onNoteUpdate,
+}: {
+  content: JSONContent;
+  onNoteUpdate: (content: JSONContent) => void;
+}) => {
   const editor = useEditor({
     extensions,
     content,
+    onUpdate({ editor }) {
+      onNoteUpdate(editor.getJSON());
+    },
   });
 
-  const log = () => {
-    const contentJSON = editor.getJSON();
-    const contentRaw = editor.getText();
-    console.log(contentJSON);
-    console.log(contentRaw);
-  };
-
-  return (
-    <>
-      <EditorContent editor={editor} />
-      <Button onClick={log}>Log</Button>
-    </>
-  );
+  return <EditorContent editor={editor} />;
 };
 
-export default Editor;
+export default EditorComponent;
