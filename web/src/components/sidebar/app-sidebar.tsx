@@ -1,5 +1,5 @@
 import * as React from "react";
-import { BrainCircuit, SquareTerminal } from "lucide-react";
+import { BrainCircuit, Sparkles, Search } from "lucide-react";
 import { NavMain } from "@/components/sidebar/nav-main";
 import { NavUser } from "@/components/sidebar/nav-user";
 import {
@@ -15,11 +15,16 @@ import {
 
 const data = {
   navMain: [
-    // {
-    //   title: "Test",
-    //   url: "/dashboard",
-    //   icon: SquareTerminal,
-    // },
+    {
+      title: "Search",
+      url: "#",
+      icon: Search,
+    },
+    {
+      title: "Ask AI",
+      url: "#",
+      icon: Sparkles,
+    },
   ],
 };
 
@@ -42,10 +47,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
-      </SidebarHeader>
-      <SidebarContent>
         <NavMain items={data.navMain} />
-      </SidebarContent>
+      </SidebarHeader>
+      <SidebarContent></SidebarContent>
       <SidebarFooter>
         <NavUser />
       </SidebarFooter>

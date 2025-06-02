@@ -52,7 +52,7 @@ class NoteService {
         note.setContent(noteUpdateDto.content());
 
         noteRepository.save(note);
-        eventPublisher.publishEvent(new NoteUpdateEvent(noteId, currentUser.getUserId(),"asdasdaadsddasdadasdasda"));
+        eventPublisher.publishEvent(new NoteUpdateEvent(noteId, currentUser.getUserId(), noteUpdateDto.rawContent()));
 
         return noteMapper.toDto(note);
     }

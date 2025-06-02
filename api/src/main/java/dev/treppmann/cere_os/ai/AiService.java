@@ -32,6 +32,7 @@ class AiService {
         Document document = new Document(event.content(), Map.of("noteId", event.noteId(), "userId", event.userId()));
         List<Document> chunks = splitter.split(document);
         vectorStore.add(chunks);
+        log.info("vector embedded successfully");
     }
 
     @ApplicationModuleListener

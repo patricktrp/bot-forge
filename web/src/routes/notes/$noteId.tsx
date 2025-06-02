@@ -6,6 +6,16 @@ import type { NoteDto } from "@/types/notes.types";
 import { createFileRoute } from "@tanstack/react-router";
 import type { JSONContent } from "@tiptap/react";
 import { ClipLoader } from "react-spinners";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import { Separator } from "@/components/ui/separator";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 
 export const Route = createFileRoute("/notes/$noteId")({
   loader: async ({ params }): Promise<NoteDto> => {
@@ -17,13 +27,13 @@ export const Route = createFileRoute("/notes/$noteId")({
 function RouteComponent() {
   const note = Route.useLoaderData();
 
-  const { mutate, isPending, isError, isSuccess } = useUpdateNote(note.id);
+  const { mutate, isPending } = useUpdateNote(note.id);
 
-  const handleNoteUpdate = (content: JSONContent) => {
+  const handleNoteUpdate = (content: JSONContent, rawContent: string) => {
     mutate({
       title: note.title,
-      content: content,
-      rawContent: "",
+      content,
+      rawContent,
     });
   };
 
@@ -33,10 +43,34 @@ function RouteComponent() {
   );
 
   return (
-    <div>
-      {isPending && <ClipLoader />}
-      <h1>{note.title}</h1>
-      <Editor content={note.content} onNoteUpdate={debouncedHandleNoteUpdate} />
-    </div>
+    <>
+      <header className="flex justify-between px-4 border-b items-center h-16">
+        <div className="flex  shrink-0 items-center gap-2">
+          <SidebarTrigger className="-ml-1" />
+          <Separator
+            orientation="vertical"
+            className="mr-2 data-[orientation=vertical]:h-4"
+          />
+          <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem className="hidden md:block">
+                <BreadcrumbLink href="#">Notes</BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator className="hidden md:block" />
+              <BreadcrumbItem>
+                <BreadcrumbPage>{note.title}</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
+        <ClipLoader size="20" loading={isPending} />
+      </header>
+      <div className="p-4">
+        <Editor
+          content={note.content}
+          onNoteUpdate={debouncedHandleNoteUpdate}
+        />
+      </div>
+    </>
   );
 }

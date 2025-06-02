@@ -8,13 +8,19 @@ const EditorComponent = ({
   onNoteUpdate,
 }: {
   content: JSONContent;
-  onNoteUpdate: (content: JSONContent) => void;
+  onNoteUpdate: (content: JSONContent, rawContent: string) => void;
 }) => {
   const editor = useEditor({
     extensions,
     content,
     onUpdate({ editor }) {
-      onNoteUpdate(editor.getJSON());
+      onNoteUpdate(editor.getJSON(), editor.getText());
+    },
+    editorProps: {
+      attributes: {
+        class:
+          "prose prose-sm sm:prose-base lg:prose-lg xl:prose-2xl m-5 focus:outline-none  h-[50vh]",
+      },
     },
   });
 
